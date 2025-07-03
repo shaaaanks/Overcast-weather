@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OVERCAST</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #ffffe4;
+      font-family: "Fira Code", monospace;
+      height: 100%;
+      width: 100%;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 50px;
+      margin-top: 50px;
+      width: 100%;
+      height: 500px;
+    }
+
+    .left {
+      max-width: 40%;
+    }
+
+    .left h1 {
+      font-size: 48px;
+      font-weight: 900;
+      margin: 0 0 90px;
+    }
+
+    .left p {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 5px 0;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      border: 2px solid black;
+      border-radius: 25px;
+      padding: 5px 10px;
+      width: 300px;
+      margin-top: 50px;
+    }
+
+    .search-container input {
+      border: none;
+      outline: none;
+      font-size: 18px;
+      font-family: "Fira Code", monospace;
+      width: 100%;
+      background: transparent;
+    }
+
+    .search-container span {
+      font-size: 20px;
+    }
+
+    .right {
+      background: radial-gradient(circle at center, #d4f87d 0%, #ffffe4 70%);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 300px;
+    }
+
+    table,
+    th,
+    td {
+      border: 2px solid black;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    nav {
+      background-color: #ade302;
+      text-align: center;
+      padding: 10px;
+      font-weight: 600;
+      margin-top: 50px;
+    }
+    button {
+ padding: 15px 25px;
+ border: unset;
+ border-radius: 15px;
+ color: #212121;
+ z-index: 1;
+ background: #ade302;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+button::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: #212121;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
+}
+
+button:hover {
+ color: #e8e8e8;
+}
+
+button:hover::before {
+ width: 100%;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="left">
+      <h1>OVERCAST</h1>
+      <p>ENTER</p>
+      <p>THE CITY</p>
+      <p>NAME</p>
+
+      <form action="/weather/fetch" method="POST">
+        <div class="search-container">
+          <span>🔍</span>
+          <input type="text" name="city_name" placeholder="City name" required>
+          
+        </div>
+        <button type="submit" style="margin-top: 40px;">Get Weather</button>
+      </form>
+    </div>
+    <div class="right">
+      <% if (city) { %>
+        <p>Showing weather for: <%= city %>
+        </p>
+        <table>
+          <tr>
+            <th>CITY</th>
+            <td>
+              <%= city %>
+            </td>
+          </tr>
+          <tr>
+            <th>TEMPERATURE</th>
+            <td>
+              <%= temperature %>
+            </td>
+          </tr>
+          <tr>
+            <th>CLIMATE</th>
+            <td>
+              <%= description %>
+            </td>
+          </tr>
+        </table>
+        <% } %>
+    </div>
+  </div>
+
+
+  <nav>Website made by Shardul Gurav</nav>
+
+
+</body>
+
+</html>

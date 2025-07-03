@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVERCAST</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+        * {
+            box-sizing: border-box;
+            /* border: 2px solid black; */
+          
+        }
+
+        body {
+            margin: 0;
+            /* Removes default margin that causes overflow */
+            height: 100%;
+
+            background-color: #ffffe4;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            margin-top: 30px;
+            display: flex
+;
+    justify-content: space-around;
+    align-items: anchor-center;
+        }
+
+        .text {
+
+            width: 50%;
+        }
+       .shape {
+    width:"400px" ;
+    height:"400px"
+}
+
+.img{
+        overflow: hidden;
+        height: 100%;
+}
+
+/* From Uiverse.io by alexroumi */ 
+button {
+ padding: 15px 25px;
+ border: unset;
+ border-radius: 15px;
+ color: #212121;
+ z-index: 1;
+ background: #ade302;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+button::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: #212121;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
+}
+
+button:hover {
+ color: #e8e8e8;
+}
+
+button:hover::before {
+ width: 100%;
+}
+
+nav{
+    width: 100%;
+    height: auto;
+    font-family:" Fira Code";
+    background-color: #ade302;
+    bottom: 0;
+    text-align: center;
+        translate: 0px 39px;
+}
+
+    </style>
+</head>
+  <!-- font-family: "Fira Code", monospace;
+            font-weight: <weight>; -->
+<body>
+    <div class="container">
+        <div class="text">
+            <p style="
+            font-size: 45.3px;     
+            width: fit-content;
+            margin-left: 150px;
+            height: fit-content;
+            font-family: Fira Code;
+            font-weight: 900;
+       
+               ">
+    OVERCAST</p>
+            <p style="
+            font-size: 96px;     
+            width: fit-content;;
+            height: fit-content;
+            margin-left: 150px;
+            font-family: Fira Code;
+            font-weight: 900;
+    ">Get the<br> wheather </p>
+
+<a href="/getdata" > <button style="margin-left: 150px;
+            font-family: Fira Code;
+            "> Click me!
+</button></a>
+   
+        </div>
+
+        <div class="img" style=" background: radial-gradient(circle at center, #d4f87d 0%, #ffffe4 70%);
+    border-radius: 10px;">
+            <img src="/overcast-Website-unscreen.gif" style=" width: 700px; height: auto; ">
+            
+        </div>
+
+    </div>
+
+    <!-- <div class="shape"></div> -->
+     <nav> Website made by Shardul gurav</nav>
+
+</body>
+
+</html>
